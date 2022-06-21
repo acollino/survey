@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,32 @@
   <title>{% block title%}Survey{% endblock %}</title>
   <link link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for msg in messages %}
+        <p class="flash">{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
   {% block content %}
-    <h1>{{survey.title}}</h1>
-    <h3>{{survey.instructions}}</h3>
-    <form action="/responses" method="post">
-      <button class="link-button">Begin</button>
-    </form>
+  <div class="survey-container">
+    <div class="title">
+      <h1>{{survey.title}}</h1>
+    </div>
+    <div class="survey-content">
+      <h3>{{survey.instructions}}</h3>
+      <form action="/responses" method="post">
+        <button class="link-button">Begin</button>
+      </form>
+    </div>
+  </div>
   {% endblock %}
+  <div class="footer">Page by <a href="https://github.com/acollino/survey" target="_blank">Alex Collino</a>, background
+    image is a digital art vector created by rawpixel.com at <a href='https://www.freepik.com/vectors/digital-art'
+      target="_blank">freepik.com</a>
+  </div>
 </body>
+
 </html>

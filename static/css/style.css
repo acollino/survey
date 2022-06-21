@@ -1,14 +1,21 @@
+body {
+  background-image: url("/static/images/pixel-rain.jpg");
+  background-size: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
 .link-button {
   display: block;
   width: fit-content;
   text-decoration: none;
   font-size: 1.15rem;
-  font-family: Arial,Helvetica,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
   cursor: default;
   background-color: #d8d8d8;
   padding: 0.1rem 0.5rem;
-  margin: 1rem;
+  margin: 1rem auto;
   border-width: 1px;
   border-style: outset;
   border-color: #a4a4a4;
@@ -18,4 +25,66 @@
 
 .link-button:hover {
   filter: brightness(110%);
+}
+
+.survey-container {
+  margin: 5rem auto;
+  text-align: center;
+  border: rgb(28, 136, 244) 0.25rem solid;
+  background-color: white;
+  border-radius: 1rem;
+  width: 45%;
+}
+
+.title {
+  background-color: rgb(28, 136, 244);
+  padding: 0.25rem;
+}
+
+.survey-content {
+  padding: 0 0.5rem;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.footer {
+  background-color: rgb(13, 13, 62);
+  color: white;
+  position: absolute;
+  padding: 0.25rem 0;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer > a {
+  color: rgb(241, 208, 165);
+}
+
+.thanks-content {
+  display: inline-flex;
+  margin: 0.5rem 0.25rem;
+}
+
+.thanks-ques-or-resp {
+  display: flex;
+  flex-direction: column;
+  border: black 0.05rem solid;
+}
+
+.thanks-item {
+  border: black 0.05rem solid;
+  padding: 0.25rem 1rem;
+}
+
+.flash {
+  text-align: center;
+  background-color: rgb(244, 41, 31);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  width: fit-content;
 }

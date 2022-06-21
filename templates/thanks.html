@@ -3,5 +3,25 @@
 {% block title %}Thank You{% endblock %}
 
 {% block content %}
-  <h1>Thank you for completing this survey!</h1>
+  <div class="survey-container">
+    <div class="title">
+      <h1>Thank you for completing this survey!</h1>
+    </div>
+  <div class="survey-content">
+    <div>Your responses have been recorded; feel free to close the page.</div>
+    <div><u>You responded:</u></div>
+    <div class="thanks-content">
+      <div class="thanks-ques-or-resp">
+        {% for quest in questions %}
+          <div class="thanks-item">{{quest.question}}</div>
+        {% endfor %}
+      </div>
+      <div class="thanks-ques-or-resp">
+        {% for resp in responses %}
+          <div class="thanks-item">{{resp}}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

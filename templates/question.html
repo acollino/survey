@@ -3,24 +3,23 @@
 {% block title %}Survey Question{% endblock %}
 
 {% block content %}
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    {% for msg in messages %}
-      <p>{{msg}}</p>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
-<h2>Please answer:</h2>
-<p>{{quest.question}}</p>
-<form action="/answer" method="post">
-  {% for choice in quest.choices %}
-  {% if loop.index == 1 %}
-  <input type="radio" id="choice{{loop.index}}" name="choice" value="{{choice}}" checked>
-  {% else %}
-  <input type="radio" id="choice{{loop.index}}" name="choice" value="{{choice}}">
-  {% endif %}
-  <label for="choice{{loop.index}}">{{choice}}</label>
-  {% endfor %}
-  <button class="link-button">Next</button>
-</form>
+<div class="survey-container">
+  <div class="title">
+    <h2>Please answer:</h2>
+  </div>
+  <div class="survey-content">
+    <p>{{quest.question}}</p>
+    <form action="/answer" method="post">
+      {% for choice in quest.choices %}
+      {% if loop.index == 1 %}
+      <input type="radio" id="choice{{loop.index}}" name="choice" value="{{choice}}" checked>
+      {% else %}
+      <input type="radio" id="choice{{loop.index}}" name="choice" value="{{choice}}">
+      {% endif %}
+      <label for="choice{{loop.index}}">{{choice}}</label>
+      {% endfor %}
+      <button class="link-button">Next</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
