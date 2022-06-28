@@ -1,8 +1,9 @@
 from flask import Flask, redirect, render_template, request, flash, session
 from surveys import satisfaction_survey as satisfy
+import os
 
 app = Flask(__name__)
-app.secret_key = "many random chars"
+app.secret_key = os.getenv("SECRET_KEY", "dev_only_default")
 
 
 @app.route("/")
